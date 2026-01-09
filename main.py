@@ -6,7 +6,7 @@ from astrbot.api import AstrBotConfig
 import random
 import time
 
-@register("group_verification", "Your Name", "进群验证插件，自动发送验证码并验证新成员", "1.0.0", "https://github.com/yourusername/astrbot_plugin_group_verification")
+@register("group_verification", "Your Name", "进群验证插件，自动发送验证码并验证新成员", "1.0.1", "https://github.com/yourusername/astrbot_plugin_group_verification")
 class GroupVerificationPlugin(Star):
     def __init__(self, context: Context, config: AstrBotConfig):
         super().__init__(context)
@@ -125,3 +125,4 @@ class GroupVerificationPlugin(Star):
     async def terminate(self):
         """插件被卸载时调用"""
         logger.info("进群验证插件已卸载")
+
