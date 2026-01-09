@@ -1,0 +1,14 @@
+{
+    "code_length": {
+        "description": "验证码位数",
+        "type": "int",
+        "hint": "设置验证码的位数，默认6位",
+        "default": 6
+    },
+    "timeout": {
+        "description": "验证超时时间",
+        "type": "int",
+        "hint": "设置验证的超时时间，单位为秒，默认300秒",
+        "default": 300
+    }
+}

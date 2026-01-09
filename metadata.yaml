@@ -1,0 +1,5 @@
+name: group_verification
+version: 1.0.0
+author: Your Name
+description: 进群验证插件，自动发送验证码并验证新成员
+repository: https://github.com/yourusername/astrbot_plugin_group_verification
