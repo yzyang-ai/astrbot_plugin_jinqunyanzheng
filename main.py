@@ -1,6 +1,7 @@
-from astrbot.api.event import filter, AstrMessageEvent, EventMessageType
+from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
+from astrbot.api.platform import MessageType
 from astrbot.api import AstrBotConfig
 import random
 import time
@@ -14,7 +15,7 @@ class GroupVerificationPlugin(Star):
         self.pending_verification = {}
         logger.info("进群验证插件已初始化")
 
-    @filter.event_message_type(EventMessageType.OTHER_MESSAGE)
+    @filter.event_message_type(MessageType.OTHER_MESSAGE)
     async def on_member_join(self, event: AstrMessageEvent):
         """监听成员加入事件"""
         try:
@@ -51,7 +52,7 @@ class GroupVerificationPlugin(Star):
         except Exception as e:
             logger.error(f"处理成员加入事件时出错: {e}")
 
-    @filter.event_message_type(EventMessageType.GROUP_MESSAGE)
+    @filter.event_message_type(MessageType.GROUP_MESSAGE)
     async def on_group_message(self, event: AstrMessageEvent):
         """监听群消息，验证验证码"""
         try:
